@@ -1,0 +1,12 @@
+@use "./theme.scss" as *;
+
+// 设置 css 属性的 值
+@mixin theme($property_name, $color_name) {
+    .light & {
+        #{$property_name}: map-get($light_colors, $color_name);
+    }
+
+    .dark & {
+        #{$property_name}: map-get($dark_colors, $color_name);
+    }
+}

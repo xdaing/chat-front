@@ -1,0 +1,66 @@
+@use './theme/handle.scss' as *;
+@use './variable.scss' as *;
+
+@mixin stage {
+    height: $box-height;
+    width: $stage-width;
+    display: flex;
+    box-sizing: border-box;
+}
+
+@mixin list {
+    height: $box-height;
+    width: $stage-list-width;
+    box-sizing: border-box;
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+    @include theme('border-color', 'border_color');
+}
+
+@mixin list-title {
+    width: $stage-list-content-width;
+    font-size: 16px;
+    height: 40px;
+    font-weight: 600;
+    user-select: none;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid black;
+    @include theme('border-color', 'border_color');
+}
+
+@mixin line($width: ($stage-list-content-width)-($stage-list-item-space)) {
+    position: relative;
+
+    &::after {
+        position: absolute;
+        width: $width;
+        content: '';
+        bottom: 0;
+        right: 0;
+        border-bottom: 1px solid rgba(155, 153, 153, .2);
+    }
+}
+
+@mixin item {
+    width: $stage-list-content-width ;
+    box-sizing: border-box;
+    padding: 0 $stage-list-item-space;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    @include line;
+
+    &:hover {
+        @include theme('background-color', 'hover_color')
+    }
+
+}
+
+@mixin content {
+    width: $content-width;
+    height: $box-height;
+}

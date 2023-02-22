@@ -1,0 +1,25 @@
+$box-height: 620px; // 最外层盒子的高度
+$box-width: 1000px; // 最外层盒子的宽度
+
+$toolbar-width: 85px; // 侧边工具栏的宽度
+
+$stage-width: (
+    $box-width) - ($toolbar-width
+); //  一级路由的宽度
+
+$stage-list-width: 300px; // 列表的宽度
+$stage-list-title-height: 40px; // 列表标题的高度
+$stage-list-content-width: (
+    $stage-list-width) - (2px
+); // 列表中内容区的宽度
+$stage-list-content-height: (
+    $box-height) - ($stage-list-title-height
+); // 列表中内容区的高度
+
+
+$content-width: (
+    $stage-width) - ($stage-list-width
+); // 展示区的宽度(二级路由)
+
+$stage-list-item-space: 15px; // item 两边留白
+$stage-list-item-avatar-space: 12px; // item 头像与右侧文字之间的距离
