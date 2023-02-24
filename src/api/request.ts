@@ -41,8 +41,8 @@ request.interceptors.response.use(response => {
                 isRefreshing = false
                 return request(response.config)
             }).catch(() => {
+                retryRequests = []
                 isRefreshing = false
-                // 退出登录
                 userStore.logout()
                 ElMessage.error('出错了')
             })
